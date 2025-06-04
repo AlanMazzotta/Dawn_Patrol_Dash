@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Personal Dashboard</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #f7f9fa; margin: 0; padding: 0; }
+    .container { display: flex; flex-wrap: wrap; gap: 24px; justify-content: center; padding: 32px; }
+    .panel { background: #fff; border-radius: 10px; box-shadow: 0 2px 8px #0001; padding: 20px; margin: 0 0 24px 0; min-width: 350px; max-width: 600px; flex: 1 1 400px; }
+    h2 { margin-top: 0; }
+    iframe { border: none; border-radius: 8px; }
+    .perplexity-input { width: 100%; padding: 8px; margin-bottom: 8px; }
+    .button { background: #3b82f6; color: #fff; border: none; padding: 8px 16px; border-radius: 5px; cursor: pointer; }
+    .button:hover { background: #2563eb; }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <!-- Weather Map -->
+    <div class="panel">
+      <h2>Weather Map (Windy.com)</h2>
+      <iframe width="650" height="450" src="https://embed.windy.com/embed.html?type=map&location=coordinates&metricRain=default&metricTemp=default&metricWind=default&zoom=7&overlay=wind&product=ecmwf&level=surface&lat=45.015&lon=-122.569&detailLat=44.308&detailLon=-121.882&detail=true&pressure=true" frameborder="0"></iframe>
+    </div>
+
+    <!-- Perplexity AI -->
+    <div class="panel">
+      <h2>Perplexity AI</h2>
+      <form action="https://www.perplexity.ai/search" method="get" target="_blank">
+        <input class="perplexity-input" type="text" name="q" placeholder="Ask Perplexity..." required>
+        <button class="button" type="submit">Ask</button>
+      </form>
+      <p>
+        <a href="https://www.perplexity.ai/library" target="_blank">Open My Perplexity Library</a>
+      </p>
+    </div>
+
+    <!-- Google Calendar -->
+    <div class="panel">
+      <h2>Google Calendar</h2>
+      <iframe src="https://calendar.google.com/calendar/embed?src=alan.mazzotta%40pcc.edu&ctz=America%2FLos_Angeles" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+      <p>
+        <a href="https://calendar.google.com/" target="_blank">Open Google Calendar</a>
+      </p>
+    </div>
+
+    <!-- Google Tasks (workaround) -->
+    <div class="panel">
+      <h2>Google Tasks</h2>
+      <p>
+        <a href="https://tasks.google.com/embed/list/@default" target="_blank">Open Google Tasks</a>
+      </p>
+      <p>
+        <em>Note: Google Tasks does not support public embedding. Click above to view your tasks in a new tab.</em>
+      </p>
+    </div>
+
+  </div>
+</body>
+</html>
