@@ -2,15 +2,27 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>My Personal Dashboard</title>
+  <title>Dawn Patrol Dash</title>
   <style>
-    body { font-family: 'Courier New', monospace; background: #0b132bff; margin: 0; padding: 0; color: #ada8b6ff }
-    .container { display: flex; flex-wrap: wrap; gap: 24px; justify-content: center; padding: 32px; }
+    body {
+      font-family: 'Courier New', monospace;
+      background: #0b132bff;
+      margin: 0;
+      padding: 0;
+      color: #ada8b6ff;
+    }
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+      justify-content: center;
+      padding: 32px;
+    }
     .panel {
       background: #0b132bff;
       border-radius: 10px;
       box-shadow: 0 2px 8px #101419ff;
-      padding: 14px 20px; /* Reduced vertical padding */
+      padding: 14px 20px;
       margin: 0 0 24px 0;
       min-width: 350px;
       max-width: 600px;
@@ -19,23 +31,43 @@
       flex-direction: column;
       align-items: stretch;
     }
-    h2 { margin-top: 0; color: #ada8b6ff}
-    a {color: #ada8b6ff; /* Optional: makes links match text color */
+    /* Unique panel sizes below */
+    .perplexity-panel {
+      max-width: 400px;
+      min-width: 250px;
+      height: 140px;
     }
+    .weather-panel {
+      max-width: 800px;
+      min-width: 350px;
+      height: 500px;
+    }
+    .calendar-panel {
+      max-width: 700px;
+      min-width: 350px;
+      height: 420px;
+    }
+    .tasks-panel {
+      max-width: 400px;
+      min-width: 250px;
+      height: 180px;
+    }
+    h2 { margin-top: 0; color: #ada8b6ff }
+    a { color: #ada8b6ff; }
     iframe { border: none; border-radius: 8px; width: 100%; }
     .perplexity-input {
       width: 100%;
-      padding: 4px 8px;    /* Slimmer input */
+      padding: 4px 8px;
       margin-bottom: 4px;
       font-size: 1em;
-      height: 28px;        /* Lower input height */
+      height: 28px;
       box-sizing: border-box;
     }
     .button {
       background: #ffbd00ff;
       color: #84dccfff;
       border: none;
-      padding: 4px 12px;   /* Slimmer button */
+      padding: 4px 12px;
       border-radius: 5px;
       cursor: pointer;
       font-size: 1em;
@@ -50,8 +82,8 @@
 <body>
   <div class="container">
 
-    <!-- Perplexity AI (now first and slimmer) -->
-    <div class="panel">
+    <!-- Perplexity AI -->
+    <div class="panel perplexity-panel">
       <h2>Perplexity AI</h2>
       <form action="https://www.perplexity.ai/search" method="get" target="_blank" style="margin-bottom: 8px;">
         <input class="perplexity-input" type="text" name="q" placeholder="Ask Perplexity..." required>
@@ -61,20 +93,20 @@
     </div>
 
     <!-- Weather Map -->
-    <div class="panel">
+    <div class="panel weather-panel">
       <h2>Weather Map</h2>
       <iframe height="400" src="https://embed.windy.com/embed.html?type=map&location=coordinates&metricRain=default&metricTemp=default&metricWind=default&zoom=7&overlay=wind&product=ecmwf&level=surface&lat=45.015&lon=-122.569&detailLat=44.308&detailLon=-121.882&detail=true&pressure=true" allowfullscreen></iframe>
     </div>
 
     <!-- Google Calendar -->
-    <div class="panel">
+    <div class="panel calendar-panel">
       <h2>Google Calendar</h2>
       <iframe src="https://calendar.google.com/calendar/embed?src=alan.mazzotta%40pcc.edu&ctz=America%2FLos_Angeles" style="width:100%; height:400px;"></iframe>
       <a href="https://calendar.google.com/" target="_blank">Open Google Calendar</a>
     </div>
 
-    <!-- Google Tasks (workaround) -->
-    <div class="panel">
+    <!-- Google Tasks -->
+    <div class="panel tasks-panel">
       <h2>Google Tasks</h2>
       <a href="https://tasks.google.com/embed/list/@default" target="_blank">Open Google Tasks</a>
       <p>
