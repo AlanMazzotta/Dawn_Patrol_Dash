@@ -12,11 +12,11 @@
       color: #ada8b6ff;
     }
     .container {
-      display: flex;
-      flex-direction: column;
-      gap: 24px;
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+      gap: 12px;
       padding: 32px;
-      align-items: flex-start;
+      width: 100%;
     }
     .bottom-row {
       display: flex;
@@ -45,7 +45,10 @@
       min-width: 250px;
       padding: 4px 8px;
       margin-bottom: 0; /* Remove extra gap below Perplexity */
-      /* No height or min-height! */
+      padding: 2px 8px;
+    }
+    .panel {
+      margin: 0 0 12px 0;
     }
     .weather-panel, .calendar-panel {
       flex: 1 1 0;
