@@ -43,22 +43,15 @@
       width: 100%;
       max-width: 800px;
       min-width: 250px;
-      /* No fixed height! */
       padding: 4px 8px;
-      }
-    .perplexity-panel h2 {
-      font-size: 1.1em;
-      margin-bottom: 4px;
-      }
-    .perplexity-panel form {
-      margin-bottom: 4px;
+      margin-bottom: 0; /* Remove extra gap below Perplexity */
+      /* No height or min-height! */
     }
-
     .weather-panel, .calendar-panel {
-      flex: 1;
-      min-width: 350px;
-      height: auto;
+      flex: 1 1 0;
+      min-width: 0;
       max-width: 700px;
+      height: auto;
     }
     .tasks-panel {
       height: auto;
@@ -111,7 +104,7 @@
       <!-- Weather Map -->
       <div class="panel weather-panel">
         <h2>Weather Map</h2>
-        <iframe height="400" src="<iframe width="650" height="450" src="https://embed.windy.com/embed.html?type=map&location=coordinates&metricRain=default&metricTemp=default&metricWind=default&zoom=5&overlay=wind&product=ecmwf&level=surface&lat=42.682&lon=-122.871&detailLat=45.522&detailLon=-122.859&detail=true&pressure=true&message=true" allowfullscreen></iframe>
+        <iframe height="400" width="100%" src="https://embed.windy.com/embed.html?type=map&location=coordinates&metricRain=default&metricTemp=default&metricWind=default&zoom=5&overlay=wind&product=ecmwf&level=surface&lat=42.682&lon=-122.871&detailLat=45.522&detailLon=-122.859&detail=true&pressure=true&message=true" allowfullscreen></iframe>
       </div>
 
       <!-- Google Calendar -->
