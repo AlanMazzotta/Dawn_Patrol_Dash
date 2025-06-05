@@ -13,10 +13,17 @@
     }
     .container {
       display: flex;
-      flex-wrap: wrap;
+      flex-direction: column;
       gap: 24px;
-      justify-content: center;
       padding: 32px;
+      align-items: center;
+    }
+    .bottom-row {
+      display: flex;
+      gap: 24px;
+      width: 100%;
+      max-width: 1300px;
+      justify-content: center;
     }
     .panel {
       background: #0b132bff;
@@ -33,24 +40,22 @@
     }
     /* Unique panel sizes below */
     .perplexity-panel {
-      max-width: 400px;
-      min-width: 250px;
+      width: 100%;
       height: 40px;
-    }
-    .weather-panel {
       max-width: 800px;
-      min-width: 350px;
-      height: 500px;
+      min-width: 250px;
     }
-    .calendar-panel {
-      max-width: 700px;
+    .weather-panel, .calendar-panel {
+      flex: 1;
       min-width: 350px;
-      height: 420px;
+      height: auto;
+      max-width: 700px;
     }
     .tasks-panel {
+      height: 40px;
+      width: 100%;
       max-width: 400px;
       min-width: 250px;
-      height: 40px;
     }
     h2 { margin-top: 0; color: #ada8b6ff }
     a { color: #ada8b6ff; }
@@ -75,6 +80,7 @@
     .button:hover { background: rgb(255, 234, 175); }
     @media (max-width: 900px) {
       .container { flex-direction: column; align-items: center; }
+      .bottom-row { flex-direction: column; }
       .panel { max-width: 95vw; min-width: 0; }
     }
   </style>
@@ -92,17 +98,19 @@
       <a href="https://www.perplexity.ai/library" target="_blank">Open My Perplexity Library</a>
     </div>
 
-    <!-- Weather Map -->
-    <div class="panel weather-panel">
-      <h2>Weather Map</h2>
-      <iframe height="400" src="https://embed.windy.com/embed.html?type=map&location=coordinates&metricRain=default&metricTemp=default&metricWind=default&zoom=7&overlay=wind&product=ecmwf&level=surface&lat=45.015&lon=-122.569&detailLat=44.308&detailLon=-121.882&detail=true&pressure=true" allowfullscreen></iframe>
-    </div>
+    <div class="bottom-row">
+      <!-- Weather Map -->
+      <div class="panel weather-panel">
+        <h2>Weather Map</h2>
+        <iframe height="400" src="https://embed.windy.com/embed.html?type=map&location=coordinates&metricRain=default&metricTemp=default&metricWind=default&zoom=7&overlay=wind&product=ecmwf&level=surface&lat=45.015&lon=-122.569&detailLat=44.308&detailLon=-121.882&detail=true&pressure=true" allowfullscreen></iframe>
+      </div>
 
-    <!-- Google Calendar -->
-    <div class="panel calendar-panel">
-      <h2>Google Calendar</h2>
-      <iframe src="https://calendar.google.com/calendar/embed?src=alan.mazzotta%40pcc.edu&ctz=America%2FLos_Angeles" style="width:100%; height:400px;"></iframe>
-      <a href="https://calendar.google.com/" target="_blank">Open Google Calendar</a>
+      <!-- Google Calendar -->
+      <div class="panel calendar-panel">
+        <h2>Google Calendar</h2>
+        <iframe src="https://calendar.google.com/calendar/embed?src=alan.mazzotta%40pcc.edu&ctz=America%2FLos_Angeles" style="width:100%; height:400px;"></iframe>
+        <a href="https://calendar.google.com/" target="_blank">Open Google Calendar</a>
+      </div>
     </div>
 
     <!-- Google Tasks -->
