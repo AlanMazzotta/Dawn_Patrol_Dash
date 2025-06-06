@@ -12,6 +12,20 @@
       padding: 0;
       color: #ada8b6ff;
     }
+    .background-iframe {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: 0;
+      pointer-events: none; /* So dashboard panels remain interactive */
+      opacity: 0.8;         /* Optional: makes the map semi-transparent */
+      filter: blur(0px);    /* Optional: blur for readability */
+    }
+    .container, .panel {
+      position: relative;
+      z-index: 1;
+    }
     .container {
       display: grid;
       grid-template-rows: auto 1fr auto;
@@ -133,6 +147,14 @@
   </style>
 </head>
 <body>
+<iframe
+class="background-iframe"
+src="https://embed.windy.com/embed.html?type=map&location=coordinates&metricRain=default&metricTemp=default&metricWind=default&zoom=3&overlay=swell1&product=ecmwfWaves&level=surface&lat=42.033&lon=-132.451" frameborder="0"></iframe>
+frameborder="0"
+allowfullscreen
+tabindex="-1"
+aria-hidden="true">
+</iframe>
   <div class="container">
 
     <!-- Robo-brain-motron 2000 -->
